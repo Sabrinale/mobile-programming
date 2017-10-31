@@ -1,17 +1,14 @@
 import {
-    EMPLOYEES_FETCH_SUCCESS
-} from '../actions/type';
+  EMPLOYEES_FETCH_SUCCESS
+} from '../actions/types';
 
-const INITIAL_STATE = {
-    
-};
-export default ( state = INITIAL_STATE, action) => {
-    
-    switch (action.type) {
-        case EMPLOYEES_FETCH_SUCCESS:  
-        console.log(action);  
-        return state;
-        default: 
-        return state;
-    }
+const INITIAL_STATE = {};
+
+export default (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case EMPLOYEES_FETCH_SUCCESS:
+      return action.payload;
+    default:
+      return state;
+  }
 };
