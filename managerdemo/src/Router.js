@@ -15,19 +15,20 @@ const RouterComponent = () => {
     <Scene key="main">
       <Scene
         
-        key="employeeList"
-        component={EmployeeList}
-        title="Employee List"
-        initial
+          key="employeeList"
+          component={EmployeeList}
+          title="Employees"
+          initial
+       
       />
       <Scene 
       key="EmployeeCreate" component={EmployeeCreate} 
-      renderBackButton={()=>(null)}
+      
       title="Create Employee"
       
        />
        <Scene key="employeeEdit" 
-       //renderBackButton={()=>(null)}
+      
        component={EmployeeEdit} title="Edit Employee" />
 
     </Scene>

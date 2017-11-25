@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { View } from 'react-native'
 import EmployeeForm from './EmployeeForm';
 import { employeeUpdate, employeeSave, employeeDelete } from '../actions';
 import { Card, CardSection, Button, Confirm } from './common';
@@ -10,7 +10,7 @@ class EmployeeEdit extends Component {
   state = { showModal: false };
 
   componentWillMount() {
-    _.each(this.props.employee, (value, prop) => {
+    _.each(this.props.item, (value, prop) => {
       this.props.employeeUpdate({ prop, value });
     });
   }
@@ -18,7 +18,7 @@ class EmployeeEdit extends Component {
   onButtonPress() {
     const { name, phone, shift } = this.props;
 
-    this.props.employeeSave({ name, phone, shift, uid: this.props.employee.uid });
+    this.props.employeeSave({ name, phone, shift, uid: this.props.item.uid });
   }
 
   
@@ -35,11 +35,8 @@ class EmployeeEdit extends Component {
 
   render() {
     return (
+      <View style={{ backgroundColor: '#e5e5ff'}}>
       <Card>
-        
-      
-       
-
          <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
             Save Changes
@@ -61,6 +58,7 @@ class EmployeeEdit extends Component {
         </Confirm> 
         <EmployeeForm />
       </Card>
+      </View>
     );
   }
 }

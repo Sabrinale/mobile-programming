@@ -22,9 +22,6 @@ class EmployeeCreate extends Component {
           </Button>
         </CardSection>
         <View>
-						<TouchableOpacity onPress={() => Actions.EmployeeList()}>
-            <Text>Back</Text>
-            </TouchableOpacity>
             </View>
       </Card>
     );
@@ -40,3 +37,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   employeeUpdate, employeeCreate
 })(EmployeeCreate);
+
